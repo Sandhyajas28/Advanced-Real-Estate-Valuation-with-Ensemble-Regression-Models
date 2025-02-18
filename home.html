@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏡 Real Estate Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏠 Real Estate Price Prediction</h1>
+            <p>Enter property details to estimate the price per unit area.</p>
+        </div>
+        
+        <div class="content">
+            <img src="{{ url_for('static', filename='house.jpg') }}" alt="House Image">
+            <a href="{{ url_for('predict') }}" class="btn">Get Started 🚀</a>
+        </div>
+    </div>
+</body>
+</html>
