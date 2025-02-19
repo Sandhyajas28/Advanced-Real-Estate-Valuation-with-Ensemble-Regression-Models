@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Price</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🏡 Enter Property Details</h1>
+    <form method="POST">
+        <label>📅 Transaction Date:</label>
+        <input type="number" name="transaction_date" step="0.01" required><br>
+
+        <label>🏠 House Age:</label>
+        <input type="number" name="house_age" step="0.01" required><br>
+
+        <label>🚉 Distance to MRT:</label>
+        <input type="number" name="distance_to_MRT" required><br>
+
+        <label>🛒 Convenience Stores Nearby:</label>
+        <input type="number" name="convenience_stores" required><br>
+
+        <label>🌍 Latitude:</label>
+        <input type="number" name="latitude" required><br>
+
+        <label>📍 Longitude:</label>
+        <input type="number" name="longitude" required><br>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Estimated Price per Unit Area: {{ prediction }}</h2>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: purple;">Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
